@@ -138,6 +138,11 @@
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
                                         data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
+                                @if ($errors->has('message'))
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first('message') }}
+                                    </div>
+                                @endif
                             </div>
     
                             <!--Lưu & Xóa-->

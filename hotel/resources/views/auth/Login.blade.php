@@ -29,12 +29,11 @@
                     <a href="" class="forget pt-6 ">Quên mật khẩu</a>
                 </label><br>
                 
-                
                 <input type="submit" name="submit" class="btn focus:border-white mt-6" value="Đăng nhập">
             </div>
            
         </form>
-    <script>
+<script>
    $(document).ready(function() {
     $("input[type='radio']").on('click', function() {
         var $radio=$(this);
