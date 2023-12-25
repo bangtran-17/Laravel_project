@@ -4,6 +4,8 @@ use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+
 use App\Models\Department;
 use Illuminate\Support\Facades\Route;
 
@@ -31,22 +33,36 @@ Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 // EMPLOYEE
 Route::get('admin/employee/create', function () {
     return view('Admin.Employee.create');
-});
+})->middleware(['auth','admin']);
 Route::resource('admin/employees', EmployeesController::class);
 
 // GUEST
 Route::get('admin/guest/create', function () {
     return view('Admin.Guest.create');
-});
+})->middleware(['auth','admin']);
 Route::resource('admin/guests', GuestController::class);
 
 // DEPARTMENT
 Route::get('admin/department/create', function () {
     return view('Admin.Department.create');
-});
+})->middleware(['auth','admin']);
 Route::resource('admin/departments', DepartmentController::class);
 
 Route::get('/dashboard',function()
 {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/gioithieu',function()
+{
+    return view('shared.gioithieu');
+})->name('gioithieu');
+
+Route::get('/suite',function()
+{
+    return view('shared.suite');
+})->name('suite');
+Route::get('/booking',function()
+{
+    return view('Booking.Booking');
+})->name('Booking');
