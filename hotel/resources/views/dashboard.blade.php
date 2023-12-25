@@ -161,7 +161,7 @@
         <button class="group-button">
           <div class="group-child1"></div>
           <div class="t-phng-group">
-            <div class="t-phng1">ĐẶT PHÒNG</div>
+            <div class="t-phng1"><a href="/booking" style="color:black;">ĐẶT PHÒNG</a></div>
             <img
               class="appointment-icon"
               alt=""

@@ -70,3 +70,7 @@ Route::get('/booking',function()
 {
     return view('Booking.Booking');
 })->name('Booking');
+Route::get('/detail',function()
+{
+    return view('Booking.RoomDetail');
+})->name('Detail');
