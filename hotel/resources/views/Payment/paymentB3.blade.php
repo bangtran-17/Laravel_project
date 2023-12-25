@@ -5,8 +5,8 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="icon" href="public/favicon.ico" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./ThanhToanB3.css" />
+    <link rel="stylesheet" href="{{url('css/payment/global.css')}}" />
+    <link rel="stylesheet" href="{{url('css/payment/ThanhToanB3.css')}}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Be Vietnam Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
@@ -56,13 +56,13 @@
                 <img
                   class="ch-logo-vng-14"
                   alt=""
-                  src="./public/ch-logo-vng-1@2x.png"
+                  src="{{asset('img/payment/ch-logo-vng-1@2x.png')}}"
                 />
 
                 <img
                   class="logo-ko-ch-k-n-14"
                   alt=""
-                  src="./public/logo-ko-ch-k-n-1@2x.png"
+                  src="{{asset('img/payment/logo-ko-ch-k-n-1@2x.png')}}"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@
       </div>
       <div class="frame25">
         <div class="frame26">
-          <img class="stepper-icon" alt="" src="./public/stepper@2x.png" />
+          <img class="stepper-icon" alt="" src="{{asset('img/payment/stepper@2x.png')}}" />
 
           <div class="t-phng-thnh">Đặt phòng thành công!</div>
         </div>
@@ -84,7 +84,7 @@
             <div class="bg4"></div>
             <div class="back-to-home">Trở về</div>
           </button>
-          <img class="group-1-1" alt="" src="./public/group-1-1@2x.png" />
+          <img class="group-1-1" alt="" src="{{asset('img/payment/group-1-1@2x.png')}}" />
         </div>
       </div>
     </div>
