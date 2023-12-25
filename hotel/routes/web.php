@@ -5,8 +5,9 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
-
+use App\Http\Controllers\PaymentController;
 use App\Models\Department;
+use App\Models\Room;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,15 +57,22 @@ Route::resource('admin/departments', DepartmentController::class);
 Route::get('/payment-info', function () {
     return view('Payment.paymentB1');
 });
-Route::get('/payment-method', function () {
-    return view('Payment.paymentB2');
-});
+
 Route::get('/payment-success', function () {
     return view('Payment.paymentB3');
 });
 
 
-Route::get('/dashboard',function()
+Route::controller(PaymentController::class)->group(function () {
+    Route::post('/payment-method', 'payment_method')->name('payment.method');
+    Route::get('/make-payment', 'MakePayment')->name('payment.make');
+    Route::get('/vnpay-error', 'VnpayError')->name('vnpay error');
+    Route::post('/momo-payment', 'momo_payment')->name('momo.payment');
+    Route::get('/momo-redirect', 'redirectMomoPayment')->name('momo.redirect');
+});
+
+
+Route::get('/',function()
 {
     return view('dashboard');
 })->name('dashboard');

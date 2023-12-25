@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     use HasFactory;
+    
+    protected $table = 'payment';
+
+    protected $fillable = [
+        'R_Number',
+        'RT_ID',
+        'R_Available',
+        'Status'
+    ];
 }

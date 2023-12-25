@@ -125,92 +125,77 @@
             </div>
             <div class="frame9">
               <div class="frame10">
-                <div class="frame11">
-                  <div class="input1">
-                    <div class="h">Họ</div>
-                    <input
-                      class="input-child"
-                      placeholder="Hoàng"
-                      type="text"
-                    />
-                  </div>
-                  <div class="input2">
-                    <div class="h">Tên</div>
-                    <input
-                      class="input-child"
-                      placeholder="Gia Lộc"
-                      type="text"
-                    />
-                  </div>
-                  <div class="input3">
-                    <div class="h">Email</div>
-                    <input
-                      class="input-child"
-                      placeholder="lochoanggia@gmail.com"
-                      type="email"
-                    />
-                  </div>
-                  <div class="input4">
-                    <div class="h">Số điện thoại</div>
-                    <input
-                      class="input-child"
-                      placeholder="0867533693"
-                      type="tel"
-                    />
-                  </div>
-                  <div class="input4">
-                    <div class="h">Số điện thoại</div>
-                    <input
-                      class="input-child"
-                      placeholder="0867533693"
-                      type="tel"
-                    />
-                  </div>
-                  <div class="input4">
-                    <div class="h">Số điện thoại</div>
-                    <input
-                      class="input-child"
-                      placeholder="0867533693"
-                      type="tel"
-                    />
-                  </div>
-                  <div class="input7">
-                    <div class="h">Ngày Check-in</div>
-                    <input
-                      class="input-child"
-                      placeholder="12/12/2023"
-                      type="date"
-                    />
-                  </div>
-                  <div class="input8">
-                    <div class="h">Ngày Check-out</div>
-                    <input
-                      class="input-child"
-                      placeholder="13/12/2023"
-                      type="date"
-                    />
-                  </div>
-                </div>
+                <form action="/payment-method" method="POST">
+                    @csrf
+                    @method('POST')
+                    <div class="frame11">
+                        <div class="input2">
+                          <div class="h">Tên</div>
+                          <input
+                            class="input-child"
+                            placeholder="Gia Lộc"
+                            type="text"
+                            name="G_Name"
+                          />
+                        </div>
+                        <div class="input3">
+                          <div class="h">Email</div>
+                          <input
+                            class="input-child"
+                            placeholder="lochoanggia@gmail.com"
+                            type="email"
+                            name="G_Email"
+                          />
+                        </div>
+                        <div class="input4">
+                          <div class="h">Số điện thoại</div>
+                          <input
+                            class="input-child"
+                            placeholder="0867533693"
+                            type="tel"
+                            name="G_SDT"
+                          />
+                        <div class="input7">
+                          <div class="h">Ngày Check-in</div>
+                          <input
+                            class="input-child"
+                            placeholder="12/12/2023"
+                            type="date"
+                            name="check_in_date"
+                          />
+                        </div>
+                        <div class="input8">
+                          <div class="h">Ngày Check-out</div>
+                          <input
+                            class="input-child"
+                            placeholder="13/12/2023"
+                            type="date"
+                            name="check_out_date"
+                          />
+                        </div>
+                      </div>
+                      <div class="frame12">
+                        <div class="frame13">
+                          <button class="btn-secondary">
+                            <div class="bg"></div>
+                            <div class="cancel">Hủy</div>
+                          </button>
+                        </div>
+                        <div class="frame14">
+                          <button class="btn-secondary" id="btnPrimary" type="submit">
+                            <div class="bg1"></div>
+                            <div class="continue-to-book">Tiếp tục</div>
+                          </button>
+                        </div>
+                      </div>
+                </form>
               </div>
               <img class="frame-inner" alt="" src="./public/vector-13@2x.png" />
             </div>
           </div>
         </div>
       </div>
-      <div class="frame12">
-        <div class="frame13">
-          <button class="btn-secondary">
-            <div class="bg"></div>
-            <div class="cancel">Hủy</div>
-          </button>
-        </div>
-        <div class="frame14">
-          <button class="btn-secondary" id="btnPrimary">
-            <div class="bg1"></div>
-            <div class="continue-to-book">Tiếp tục</div>
-          </button>
-        </div>
-      </div>
+
     </div>
 
     <script>
