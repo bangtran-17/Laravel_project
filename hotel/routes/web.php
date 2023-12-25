@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\EmployeesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +25,7 @@ Route::post('/login',[AuthController::class,'authenticate']);
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
-
+Route::resource('admin/employees', EmployeesController::class);
 
 Route::get('/dashboard',function()
 {
