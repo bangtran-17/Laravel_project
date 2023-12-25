@@ -86,3 +86,15 @@ Route::get('/detail',function()
 {
     return view('Booking.RoomDetail');
 })->name('Detail');
+Route::get('/paymentb1',function()
+{
+    return view('Payment.PaymentB1');
+})->name('paymentb1');
+Route::get('/paymentb2',function()
+{
+    return view('Payment.PaymentB2');
+})->name('paymentb2');
+Route::get('/paymentb3',function()
+{
+    return view('Payment.PaymentB3');
+})->name('paymentb3');
