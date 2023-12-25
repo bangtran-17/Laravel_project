@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Authcontroller;
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +26,17 @@ Route::post('/login',[AuthController::class,'authenticate']);
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
+// EMPLOYEE
 Route::get('admin/employee/create', function () {
     return view('Admin.Employee.create');
 });
 Route::resource('admin/employees', EmployeesController::class);
+
+// GUEST
+Route::get('admin/guest/create', function () {
+    return view('Admin.Guest.create');
+});
+Route::resource('admin/guests', GuestController::class);
 
 Route::get('/dashboard',function()
 {
