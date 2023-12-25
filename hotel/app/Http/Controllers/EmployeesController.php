@@ -29,7 +29,7 @@ class EmployeesController extends Controller
 
     public function edit($id){
         // $employee = Employee::find($id);
-        $employee = DB::table('employees')->where('E_ID', $id)->first();
+        $employee = DB::table('employee')->where('E_ID', $id)->first();
         // dd($employee);
         return view('Employees.edit')->with('employee', $employee);
     }
@@ -52,7 +52,7 @@ class EmployeesController extends Controller
         // dd($employee);
         // $employee = Employee::find($id);
         // Hoặc bạn cũng có thể sử dụng query builder nếu cần
-        $employee = DB::table('employees')->where('E_ID', $id)->first();
+        $employee = DB::table('employee')->where('E_ID', $id)->first();
         // dd($employee);
         
         return view('Admin.Employee.show')->with('employee', $employee);

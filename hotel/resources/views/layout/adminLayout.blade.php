@@ -161,6 +161,24 @@
                                     </div>
                                 </a>
                             </div>
+                        </div>
+                        <!----------------------------------------------------------------------------------------------------------------------------------------->
+                        <div class="css-1dbjc4n r-bnwqim">
+                            <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
+                                style="-webkit-transition-duration:0s;transition-duration:0s">
+                                <a href="{{ route('departments.index') }}" class="css-4rbku5">
+                                    <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
+                                        id="tvat-myacc-promo-info">
+                                        <div class="css-1dbjc4n r-18u37iz">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 448 512" style="filter:none;margin-right:8px">
+                                                <path fill="#000000" d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/>
+                                            </svg>
+                                            <div dir="auto" class="css-901oao r-1h9nbw7 r-t1w4ow r-ubezar r-majxgm r-135wba7 r-fdjqy7">QUẢN LÝ PHÒNG BAN</div>
+                                        </div>
+                                        <div class="css-1dbjc4n"></div>
+                                    </div>
+                                </a>
+                            </div>
                             <div class="css-1dbjc4n r-qklmqi r-1phboty"
                                 style="border-bottom-color:rgba(205,208,209,1.00);margin-right:16px;margin-left:16px;margin-top:8px;margin-bottom:8px">
                             </div>

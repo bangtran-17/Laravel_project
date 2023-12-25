@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Authcontroller;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\GuestController;
+use App\Models\Department;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +39,12 @@ Route::get('admin/guest/create', function () {
     return view('Admin.Guest.create');
 });
 Route::resource('admin/guests', GuestController::class);
+
+// DEPARTMENT
+Route::get('admin/department/create', function () {
+    return view('Admin.Department.create');
+});
+Route::resource('admin/departments', DepartmentController::class);
 
 Route::get('/dashboard',function()
 {

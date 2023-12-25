@@ -14,7 +14,7 @@ class GuestController extends Controller
     public function index()
     {
         $guests = Guest::orderBy('G_ID', 'desc')->get();
-        // dd($employee);
+
         return view('Admin.Guest.index')->with('guests', $guests);
         //
     }
@@ -43,7 +43,7 @@ class GuestController extends Controller
      */
     public function show(int $id)
     {
-        $guest = DB::table('guests')->where('G_ID', $id)->first();
+        $guest = DB::table('guest')->where('G_ID', $id)->first();
         // dd($employee);
         
         return view('Admin.Guest.show')->with('guest', $guest);
@@ -68,7 +68,7 @@ class GuestController extends Controller
             'G_SDT' => $request->input('G_SDT'),
             'G_CCCD' => $request->input('G_CCCD')
         ]);
-        // dd($request);
+        
         return redirect('/admin/guests');
     }
 

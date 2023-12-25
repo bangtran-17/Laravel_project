@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guests', function (Blueprint $table) {
+        Schema::create('guest', function (Blueprint $table) {
             $table->increments('G_ID');
             $table->string('G_FirstName')->nullable();
             $table->string('G_LastName')->nullable();
