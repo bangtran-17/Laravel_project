@@ -5,8 +5,8 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="icon" href="public/favicon.ico" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./ThanhToanB2.css" />
+    <link rel="stylesheet" href="{{url('css/payment/global.css')}}" />
+    <link rel="stylesheet" href="{{url('css/payment/ThanhToanB2.css')}}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Be Vietnam Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
@@ -56,21 +56,21 @@
             <img
               class="ch-logo-vng-13"
               alt=""
-              src="./public/ch-logo-vng-1@2x.png"
+              src="{{asset('img/payment/ch-logo-vng-1@2x.png')}}"
             />
 
             <img
               class="logo-ko-ch-k-n-13"
               alt=""
-              src="./public/logo-ko-ch-k-n-1@2x.png"
+              src="{{asset('img/payment/logo-ko-ch-k-n-1@2x.png')}}"
             />
           </div>
         </div>
         <div class="frame17">
           <div class="stepper1">
-            <img class="stepper-item" alt="" src="./public/vector-14@2x.png" />
+            <img class="stepper-item" alt="" src="{{asset('img/payment/vector-14@2x.png')}}" />
 
-            <img class="item-icon" alt="" src="./public/item@2x.png" />
+            <img class="item-icon" alt="" src="{{asset('img/payment/item@2x.png')}}" />
 
             <div class="item5">
               <div class="item-child3"></div>
@@ -107,18 +107,18 @@
               <span>Tổng cộng:</span>
               <span class="span"> 1.000.000 VNĐ</span>
             </div>
-            <img class="frame-child1" alt="" src="./public/vector-13@2x.png" />
+            <img class="frame-child1" alt="" src="{{asset('img/payment/vector-13@2x.png')}}" />
 
             <img
               class="image-128-icon"
               alt=""
-              src="./public/image-128@2x.png"
+              src="{{asset('img/payment/image-128@2x.png')}}"
             />
 
             <img
               class="image-129-icon"
               alt=""
-              src="./public/image-129@2x.png"
+              src="{{asset('img/payment/image-129@2x.png')}}"
             />
 
             <div class="item7">
