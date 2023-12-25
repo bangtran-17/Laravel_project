@@ -27,7 +27,7 @@
                     style="height: 10vh;">
                     <div class="css-1dbjc4n r-1awozwy r-18u37iz">
                         <a href="#" class="css-4rbku5">
-                            <img importance="low" loading="lazy" src="/DoAn/images/Logo.png" alt="Logo" decoding="async"
+                            <img importance="low" loading="lazy" src="{{ asset('img/Admin/Group_13041.png') }}" alt="Logo" decoding="async"
                                 width="200" height="55" style="object-fit:fill;object-position:50% 50%">
                         </a>
                     </div>
@@ -57,7 +57,7 @@
                         <div class="css-1dbjc4n r-bnwqim">
                             <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
                                 style="-webkit-transition-duration:0s;transition-duration:0s">
-                                <a href="#" class="css-4rbku5">
+                                <a href="/admin" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                         id="editProfile">
                                         <div class="css-1dbjc4n r-18u37iz">

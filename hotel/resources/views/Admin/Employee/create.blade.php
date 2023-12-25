@@ -123,6 +123,22 @@
                                         data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
+                            <!--Phòng ban-->
+                            <div class="css-1dbjc4n r-6gpygo">
+                                <div class="css-1dbjc4n r-18u37iz r-oyd9sg">
+                                    <div dir="auto" class="css-901oao css-cens5h r-t1w4ow r-1b43r93 r-b88u0q r-rjixqe r-fdjqy7 r-13qz1uu"
+                                        style="-webkit-line-clamp: 2; color: rgb(3, 18, 26);">Phòng ban:</div>
+                                </div>
+                                <!--Khung điền-->
+                                <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci r-edyy15">
+                                    <div class="css-1dbjc4n r-14lw9ot r-1l31rp8 r-kdyh1x r-rs99b7 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-1wyyakw"
+                                        style="transition-delay: 0ms; transition-duration: 200ms; transition-property: width, height, border-color, border-width, background-color; transition-timing-function: ease; will-change: width, height, border-color, border-width, background-color;">
+                                    </div>
+                                    <input type="text" name="E_DepartmentName"
+                                        class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
+                                </div>
+                            </div>
     
                             <!--Lưu & Xóa-->
                             <div class="css-1dbjc4n r-13awgt0 r-18u37iz r-17s6mgv r-1wzrnnt">
