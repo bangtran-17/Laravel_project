@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="bg-right-top bg-no-repeat" style="width:100%; height:100vh; background-image: url({{url('img/Liquid.png')}});">
+<body class="bg-right-top bg-no-repeat" style="width:100%; height:1 00vh; background-image: url({{url('img/Liquid.png')}});">
     <div class="row">
         <div class="col-6">
             <img class="img-fluid inline-block" src="{{asset('img/register.png')}}" alt="anhnen">
