@@ -28,6 +28,10 @@ Route::post('/login',[AuthController::class,'authenticate']);
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
+// Admin Dashboard
+Route::get('admin', function () {
+    return view('Admin.Dashboard.index');
+});
 // EMPLOYEE
 Route::get('admin/employee/create', function () {
     return view('Admin.Employee.create');

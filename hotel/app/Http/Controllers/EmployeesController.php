@@ -21,8 +21,19 @@ class EmployeesController extends Controller
     }
 
     public function store(Request $request) {
+        $request->E_DepartmentName;
+        
         $data = $request->all();
-        // dd($request);
+
+        $DE_ID = DB::table('department')->where('DE_Name',$request->E_DepartmentName)->first();
+        if($DE_ID != null){
+            $data['DE_ID'] = $DE_ID;
+        }else{
+            
+        }
+
+        dd($data);
+        
         Employee::create($data);
         return redirect('/admin/employees');
     }
