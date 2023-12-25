@@ -16,7 +16,6 @@ class GuestController extends Controller
         $guests = Guest::orderBy('G_ID', 'desc')->get();
 
         return view('Admin.Guest.index')->with('guests', $guests);
-        //
     }
 
     /**

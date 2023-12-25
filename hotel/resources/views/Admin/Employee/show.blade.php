@@ -139,11 +139,16 @@
                                     <div class="css-1dbjc4n r-14lw9ot r-1l31rp8 r-kdyh1x r-rs99b7 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-1wyyakw"
                                         style="transition-delay: 0ms; transition-duration: 200ms; transition-property: width, height, border-color, border-width, background-color; transition-timing-function: ease; will-change: width, height, border-color, border-width, background-color;">
                                     </div>
-                                    <input type="number" name="DE_ID"
+                                    <input type="text" name="E_DepartmentName"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
                                         data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->DE_ID }}">
+                                        value="{{ $employee->E_DepartmentName }}">
                                 </div>
+                                @if ($errors->has('message'))
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first('message') }}
+                                    </div>
+                                @endif
                             </div>
     
                             <!--Lưu & Xóa-->

@@ -50,6 +50,18 @@ Route::get('admin/department/create', function () {
 });
 Route::resource('admin/departments', DepartmentController::class);
 
+// Payment
+Route::get('/payment-info', function () {
+    return view('Payment.paymentB1');
+});
+Route::get('/payment-method', function () {
+    return view('Payment.paymentB2');
+});
+Route::get('/payment-success', function () {
+    return view('Payment.paymentB3');
+});
+
+
 Route::get('/dashboard',function()
 {
     return view('dashboard');
