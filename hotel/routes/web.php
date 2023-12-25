@@ -25,6 +25,9 @@ Route::post('/login',[AuthController::class,'authenticate']);
 
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 
+Route::get('admin/employee/create', function () {
+    return view('Admin.Employee.create');
+});
 Route::resource('admin/employees', EmployeesController::class);
 
 Route::get('/dashboard',function()

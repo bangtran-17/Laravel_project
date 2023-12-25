@@ -20,10 +20,13 @@ class EmployeesController extends Controller
         return redirect('/employees');
     }
 
-    public function add() {
-        // dd('hi');
-        return view('Employees.add');
+    public function store(Request $request) {
+        $data = $request->all();
+        // dd($request);
+        Employee::create($data);
+        return redirect('/admin/employees');
     }
+
     public function edit($id){
         // $employee = Employee::find($id);
         $employee = DB::table('employees')->where('E_ID', $id)->first();
@@ -35,13 +38,14 @@ class EmployeesController extends Controller
     {
         // return view('Guests.edit');
         $employee =  Employee::where('E_ID', $id)->update([
-            'E_FirstName' => $request->input('firstname'),
-            'E_Email' => $request->input('email'),
-            'E_ContactNumber' => $request->input('phonenumber'),
-            'E_Address' => $request->input('address')
+            'E_FirstName' => $request->input('E_FirstName'),
+            'E_Email' => $request->input('E_Email'),
+            'E_ContactNumber' => $request->input('E_ContactNumber'),
+            'E_Designation' => $request->input('E_Designation'),
+            'E_JoinDate' => $request->input('E_JoinDate')
         ]);
         // dd($request);
-        return redirect('/employees');
+        return redirect('/admin/employees');
     }
 
     public function show(int $id){
@@ -56,8 +60,9 @@ class EmployeesController extends Controller
     
 
     public function destroy($id) {
+        // dd($id);
         $employee = Employee::where('E_ID', $id)->delete();
         // dd($guest);
-        return redirect('/employees');
+        return redirect('/admin/employees');
     }
 }

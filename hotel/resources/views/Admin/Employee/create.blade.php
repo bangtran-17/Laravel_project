@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <!--Flex khung thông tin-->
-                <form action="{{ route('employees.update', ['employee' => $employee->E_ID]) }}" method="POST">
+                <form action="/admin/employees" method="POST">
                     @csrf
-                    @method('PUT')
+                    @method('POST')
                     <div class="css-1dbjc4n r-1guathk r-1yzf0co">
                         <div class="css-1dbjc4n">
                             <!--Mã nhân viên-->
@@ -56,8 +56,7 @@
                                     </div>
                                     <input type="text" name="E_FirstName"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
-                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->E_FirstName }}">
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
                             <!--Số điện thoại-->
@@ -73,8 +72,7 @@
                                     </div>
                                     <input type="tel" name="E_ContactNumber"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
-                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->E_ContactNumber }}">
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
                             <!--Email-->
@@ -90,8 +88,7 @@
                                     </div>
                                     <input type="email" name="E_Email"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
-                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->E_Email }}">
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
                             <!--Chức vụ-->
@@ -107,8 +104,7 @@
                                     </div>
                                     <input type="text" name="E_Designation"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
-                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->E_Designation }}">
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
                             <!--Ngày vào làm-->
@@ -124,8 +120,7 @@
                                     </div>
                                     <input type="date" name="E_JoinDate"
                                         class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
-                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);"
-                                        value="{{ $employee->E_JoinDate }}">
+                                        data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                                 </div>
                             </div>
     
@@ -136,7 +131,7 @@
                                     class="css-1dbjc4n r-kdyh1x r-88pszg r-10paoce r-1e081e0 r-5njf8e r-lrvibr"
                                     style="background-color: rgb(242, 243, 243);">
                                     <div dir="auto"
-                                        class="css-901oao r-1yadl64 r-1vonz36 r-109y4c4 r-1cis278 r-1udh08x r-t60dpp r-u8s1d r-3s2u2q r-92ng3h">ádasd</div>
+                                        class="css-901oao r-1yadl64 r-1vonz36 r-109y4c4 r-1cis278 r-1udh08x r-t60dpp r-u8s1d r-3s2u2q r-92ng3h">Huỷ</div>
                                     <div class="css-1dbjc4n r-1awozwy r-13awgt0 r-18u37iz r-1777fci r-6dt33c"
                                         style="opacity: 1;">
                                         <button dir="auto" aria-hidden="true" type="submit"
@@ -144,25 +139,19 @@
                                             style="color: rgb(1, 148, 243);">Lưu</button>
                                     </div>
                                 </div>
-                </form>
-                                <!--Xóa-->
+                                {{-- <!--Xóa-->
                                 <div aria-disabled="true" aria-live="polite" role="button"
                                     class="css-1dbjc4n r-kdyh1x r-10paoce r-1e081e0 r-5njf8e r-lrvibr"
                                     style="background-color: rgb(242, 243, 243);">
                                     <div dir="auto"
-                                        class="css-901oao r-1yadl64 r-1vonz36 r-109y4c4 r-1cis278 r-1udh08x r-t60dpp r-u8s1d r-3s2u2q r-92ng3h">ádasdasd</div>
+                                        class="css-901oao r-1yadl64 r-1vonz36 r-109y4c4 r-1cis278 r-1udh08x r-t60dpp r-u8s1d r-3s2u2q r-92ng3h">Lưu</div>
                                     <div class="css-1dbjc4n r-1awozwy r-13awgt0 r-18u37iz r-1777fci r-6dt33c"
                                         style="opacity: 1;">
-                                        <form action="{{ route('employees.destroy', ['employee' => $employee->E_ID]) }}" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này không?');" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button dir="auto" aria-hidden="true" type="submit"
-                                                class="css-901oao css-bfa6kz r-nk2qpz r-t1w4ow r-cygvgh r-b88u0q r-1iukymi r-q4m81j"
-                                                style="color: rgb(255, 0, 0);">XÓA
-                                            </button>
-                                        </form>
+                                        <div dir="auto" aria-hidden="true"
+                                            class="css-901oao css-bfa6kz r-nk2qpz r-t1w4ow r-cygvgh r-b88u0q r-1iukymi r-q4m81j"
+                                            style="color: rgb(1, 148, 243);">Xóa</div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

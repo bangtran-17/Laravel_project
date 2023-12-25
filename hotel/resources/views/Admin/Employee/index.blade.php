@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links" style="padding-left: 30px;">
-                            <a href="#" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx r-88pszg">
+                            <a href="{{ Url("/admin/employee/create") }}" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx r-88pszg">
                                 <button class="w-20">
                                     <div dir="auto" class="css-901oao r-t1w4ow r-1b43r93 r-majxgm r-rjixqe r-fdjqy7"
                                     style="color: rgb(3, 18, 26); margin-right: 4px; margin-left: 4px;">Thêm</div>
@@ -60,8 +60,8 @@
                                         <td>{{ $employee->E_ContactNumber }}</td>
                                         <td>{{ $employee->E_Email }}</td>
                                         <td>
-                                            <a href="{{ route('employees.show', ['employee'=>$employee->E_ID])}}">
-                                                <button>Xin chào b Doan</button>
+                                            <a href="{{ route('employees.show', ['employee'=>$employee->E_ID]) }}">
+                                                <button>Details</button>
                                             </a>
                                         </td>
                                     </tr>
