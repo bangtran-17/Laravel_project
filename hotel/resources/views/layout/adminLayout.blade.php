@@ -150,7 +150,7 @@
                         <div class="css-1dbjc4n r-bnwqim">
                             <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
                                 style="-webkit-transition-duration:0s;transition-duration:0s">
-                                <a href="#" class="css-4rbku5">
+                                <a href="{{ route('bookings.index') }}" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                         id="tvat-myacc-promo-info">
                                         <div class="css-1dbjc4n r-18u37iz">
