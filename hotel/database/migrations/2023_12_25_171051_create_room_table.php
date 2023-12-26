@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('room', function (Blueprint $table) {
             $table->id();
 
-            $table->string('R_Number', 50)->nullable();
-            $table->foreignId('RT_ID')->nullable()->constrained('roomtype', 'id');
-            $table->string('R_Available', 10)->nullable();
-            $table->string('Status', 50)->nullable();
-            // Thêm các trường khác nếu có
+            $table->string('R_Number')->nullable();
+            $table->unsignedBigInteger('RT_ID')->nullable();
+            $table->foreign('RT_ID')->references('id')->on('roomtype')->onDelete('SET NULL')->nullable();
+            $table->string('R_Available')->nullable();
+            $table->string('Status')->nullable();
 
             $table->timestamps();
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.

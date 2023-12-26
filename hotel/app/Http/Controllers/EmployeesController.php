@@ -42,11 +42,6 @@ class EmployeesController extends Controller
             Employee::create($data);
             return redirect('/admin/employees');
         }
-        
-
-        // dd($data);
-        
-        
     }
 
     public function edit($id){

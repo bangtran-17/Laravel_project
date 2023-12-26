@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('B_Amount', 18, 2)->nullable();
             $table->foreignId('E_ID')->nullable()->constrained('employee', 'E_ID');
             $table->foreignId('G_ID')->nullable()->constrained('guest', 'G_ID');
-            $table->foreignId('D_ID')->nullable()->constrained('discount', 'D_ID');
+            // $table->foreignId('D_ID')->nullable()->constrained('discount', 'D_ID');
             $table->string('B_Status', 50)->nullable();
             $table->foreignId('Rid')->nullable()->constrained('room', 'id');
             $table->decimal('B_Cost', 18, 2)->nullable();

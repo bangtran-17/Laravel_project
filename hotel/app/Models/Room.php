@@ -9,7 +9,7 @@ class Room extends Model
 {
     use HasFactory;
     
-    protected $table = 'payment';
+    protected $table = 'room';
 
     protected $fillable = [
         'R_Number',

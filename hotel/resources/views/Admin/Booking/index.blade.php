@@ -14,7 +14,7 @@
                         <div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links" style="padding-left: 15px;">
                             <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1777fci r-edyy15" style="width: 500px;">
                                 <div class="css-1dbjc4n r-14lw9ot r-1l31rp8 r-kdyh1x r-rs99b7 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-1wyyakw"
-                                    style="transR_Availableition-delay: 0ms; transition-duration: 200ms; transition-property: width, height, border-color, border-width, background-color; transition-timing-function: ease; will-change: width, height, border-color, border-width, background-color;">
+                                    style="transition-delay: 0ms; transition-duration: 200ms; transition-property: width, height, border-color, border-width, background-color; transition-timing-function: ease; will-change: width, height, border-color, border-width, background-color;">
                                 </div>
                                 <input type="text" id="searchInput" placeholder="Tìm kiếm"
                                     class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links" style="padding-left: 30px;">
-                            <a href="{{ Url("/admin/rooms/create") }}" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx r-88pszg">
+                            <a href="{{ Url("/admin/booking/create") }}" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx r-88pszg">
                                 <button class="w-20">
                                     <div dir="auto" class="css-901oao r-t1w4ow r-1b43r93 r-majxgm r-rjixqe r-fdjqy7"
                                     style="color: rgb(3, 18, 26); margin-right: 4px; margin-left: 4px;">Thêm</div>
@@ -47,20 +47,18 @@
                             <div class="css-1dbjc4n r-obd0qt r-13awgt0 r-18u37iz r-tzz3ar">
                                 <table id="myTable">
                                     <tr class="header">
-                                        <th style="width:20%;">TÊN KHÁCH HÀNG</th>
-                                        <th style="width:20%;">SĐT KHÁCH HÀNG</th>
-                                        <th style="width:20%;">EMAIL</th>
-                                        <th style="width:20%;">CCCD</th>
-                                        <th style="width:20%;"></th>
+                                        <th style="width:25%;">MÃ ĐẶT PHÒNG</th>
+                                        <th style="width:25%;">TIỀN</th>
+                                        <th style="width:25%;">THỜI GIAN</th>
+                                        <th style="width:25%;"></th>
                                     </tr>
-                                    @foreach ($guests as $guest)
-                                    <tr>
-                                        <td>{{ $guest->G_FirstName }}</td>
-                                        <td>{{ $guest->G_SDT }}</td>
-                                        <td>{{ $guest->G_Email }}</td>
-                                        <td>{{ $guest->G_CCCD }}</td>
+                                    @foreach ($bookings as $booking)
+                                    <tr class="content">
+                                        <td>{{ $booking->id }}</td>
+                                        <td>{{ $booking->B_Amount }}</td>
+                                        <td>{{ $booking->B_DATE }}</td>
                                         <td>
-                                            <a href="{{ route('guests.show', ['guest'=>$guest->G_ID]) }}">
+                                            <a href="{{ route('bookings.show', ['booking'=>$booking->id]) }}">
                                                 <button>Details</button>
                                             </a>
                                         </td>
@@ -99,4 +97,5 @@
         });
     });
 </script>
+
 @endsection

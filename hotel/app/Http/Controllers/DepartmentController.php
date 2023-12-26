@@ -77,5 +77,6 @@ class DepartmentController extends Controller
     {
         $guest = Department::where('id', $id)->delete();
         
-        return redirect('/admin/departments');    }
+        return redirect('/admin/departments');    
+    }
 }

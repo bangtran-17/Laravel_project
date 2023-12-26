@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/0507d81bf9.js"></script>
+    <link rel="icon" href="{{ asset('/favicon.png') }}" />
     <link rel="stylesheet" href="QLNV.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
@@ -131,7 +132,7 @@
                         <div class="css-1dbjc4n r-bnwqim">
                             <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
                                 style="-webkit-transition-duration:0s;transition-duration:0s">
-                                <a href="#" class="css-4rbku5">
+                                <a href="{{ route('rooms.index') }}" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                         id="tvat-myacc-promo-info">
                                         <div class="css-1dbjc4n r-18u37iz">
@@ -149,7 +150,7 @@
                         <div class="css-1dbjc4n r-bnwqim">
                             <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
                                 style="-webkit-transition-duration:0s;transition-duration:0s">
-                                <a href="#" class="css-4rbku5">
+                                <a href="{{ route('bookings.index') }}" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                         id="tvat-myacc-promo-info">
                                         <div class="css-1dbjc4n r-18u37iz">
