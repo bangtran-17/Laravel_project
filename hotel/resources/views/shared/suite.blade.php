@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="icon" href="public/favicon.ico" />
+    <link rel="icon" href="{{ asset('/favicon.png') }}" />
     <link rel="stylesheet" href="{{url('css/suite/global.css')}}" />
     <link rel="stylesheet" href="{{url('css/suite/ChiTietCacLoaiPhong.css')}}" />
     <link

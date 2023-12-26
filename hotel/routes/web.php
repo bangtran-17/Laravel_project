@@ -6,6 +6,7 @@ use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RoomController;
 use App\Models\Department;
 use App\Models\Room;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,12 @@ Route::resource('admin/departments', DepartmentController::class);
 
 // Admin Payment
 Route::resource('admin/payment', PaymentController::class);
+
+// Admin Room
+Route::get('admin/room/create', function () {
+    return view('Admin.Room.create');
+})->middleware(['auth','admin']);
+Route::resource('admin/rooms', RoomController::class);
 
 // Payment
 Route::get('/payment-info', function () {

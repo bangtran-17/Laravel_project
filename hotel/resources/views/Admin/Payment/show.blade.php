@@ -17,7 +17,7 @@
                             style="flex-direction: column; -webkit-box-orient: vertical; -webkit-box-direction: normal; padding-left: 250px;">
                             <h3 aria-level="3" dir="auto" role="heading"
                                 class="css-4rbku5 css-901oao r-t1w4ow r-ubezar r-b88u0q r-rjixqe r-fdjqy7"
-                                style="color: rgb(3, 18, 26); margin-bottom: 4px;">THÔNG TIN CÁ NHÂN</h3>
+                                style="color: rgb(3, 18, 26); margin-bottom: 4px;">THÔNG TIN HÓA ĐƠN</h3>
                         </div>
                     </div>
                 </div>
