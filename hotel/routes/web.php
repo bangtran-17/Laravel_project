@@ -6,6 +6,8 @@ use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RoomTypeController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Models\Department;
 use App\Models\Room;
 use Illuminate\Support\Facades\Route;
@@ -75,10 +77,14 @@ Route::controller(PaymentController::class)->group(function () {
 });
 
 
-Route::get('/',function()
-{
-    return view('dashboard');
-})->name('dashboard');
+
+
+Route::controller(DashboardController::class)->group(function () {
+    Route::post('/dashboard', 'getData')->name('dashboard.saveData');
+    Route::get('/dashboard', 'index')->name('dashboard');
+
+});
+
 
 Route::get('/gioithieu',function()
 {
@@ -89,10 +95,20 @@ Route::get('/suite',function()
 {
     return view('shared.suite');
 })->name('suite');
+
+
 Route::get('/booking',function()
 {
     return view('Booking.Booking');
 })->name('Booking');
+
+Route::controller(RoomTypeController::class)->group(function () {
+    Route::get('/booking', 'index')->name('booking');
+    Route::get('/detail{id}', 'indexDetail')->name('detail');
+    Route::post('/booking/{id}','RoomType')->name('booking.send');
+    Route::post('/payment/{id}','payMentInfo')->name('booking.payment');
+});
+
 Route::get('/detail',function()
 {
     return view('Booking.RoomDetail');

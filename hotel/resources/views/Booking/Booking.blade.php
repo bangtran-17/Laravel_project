@@ -75,7 +75,7 @@
                   <div class="input-text">
                     <input
                       class="input-text1"
-                      placeholder="12/02/2024"
+                      value="{{$BookingInfo['CheckinDate']}}"
                       type="date"
                     />
                   </div>
@@ -93,7 +93,7 @@
                   <div class="input-text">
                     <input
                       class="input-text1"
-                      placeholder="13/02/2024"
+                      value="{{$BookingInfo['CheckoutDate']}}"
                       type="date"
                     />
                   </div>
@@ -111,6 +111,7 @@
           </button>
         </div>
       </div>
+      @foreach ($roomTypes as $roomtype)
       <div class="frame-parent">
         <div class="hin-th-10-phng-wrapper">
           <div class="hin-th-10-container">
@@ -141,10 +142,12 @@ initGallery(jsonFilePath, {
     speed: 600,
 });
               </script>
+
+
             <div class="frame-group">
               <div class="frame-parent1">
                 <div class="grand-atlantis-suite-parent">
-                  <b class="grand-atlantis-suite">Grand Atlantis Suite</b>
+                  <b class="grand-atlantis-suite">{{ $roomtype->RT_NAME }}</b>
                   <div class="frame-parent2">
                     <div class="edit-fill-parent">
                       <img
@@ -154,10 +157,7 @@ initGallery(jsonFilePath, {
                       />
 
                       <div class="ni-mi-yu">
-                        Nơi mọi yếu tố đều được tạo ra để nâng cao trải nghiệm
-                        lưu trú của bạn. Căn hộ Atlantis Grand của chúng tôi
-                        không chỉ giữ vững danh tiếng của nó mà còn mang đến sự
-                        thanh lịch và hùng vĩ mà chắc chắn sẽ gây ấn tượng.
+                        {{ $roomtype->RT_DES }}
                       </div>
                     </div>
                     <div class="frame-parent3">
@@ -179,7 +179,7 @@ initGallery(jsonFilePath, {
                           src="{{asset('img/Booking/DatPhong/home-fill@2x.png')}}"
                         />
 
-                        <div class="tm-nhn-tuyt">429 m2</div>
+                        <div class="tm-nhn-tuyt">{{ $roomtype->R_Area }} m2</div>
                       </div>
                     </div>
                     <div class="user-fill-parent">
@@ -198,21 +198,26 @@ initGallery(jsonFilePath, {
                 </div>
                 <div class="ch-vi-parent">
                   <div class="ch-vi">Chỉ với</div>
-                  <b class="vn-m">12.000.000 VNĐ/ đêm</b>
+                  <b class="vn-m">{{ $roomtype->RT_Cost }} VNĐ/ đêm</b>
                 </div>
               </div>
               <div class="frame-child1"></div>
               <button class="button-wrapper">
                 <div class="button1">
+                    <form action="{{ route('booking.send', ['id' => $roomtype->id]) }}" method="POST">
                   <div class="style-layer1">
-                    <div class="button2">Xem thêm</div>
+                        @csrf
+                        @method('POST')
+                    <input style="" type="submit" value="Xem thêm">
                   </div>
+                  </form>
                 </div>
               </button>
             </div>
           </div>
         </div>
       </div>
+      @endforeach
     </div>
     <script src="{{url('js/script.js')}}"></script>
   </body>

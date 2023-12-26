@@ -97,7 +97,7 @@
           </button>
           <div class="line-parent1">
             <div class="frame-inner"></div>
-            <div class="regal-suite">Regal Suite</div>
+            <div class="regal-suite">{{$roomTypes->RT_NAME}}</div>
           </div>
         </div>
       </div>
@@ -135,7 +135,7 @@
                 <div class="frame10">
                   <div class="header">
                     <div class="title">
-                      <div class="iu-cn-bit">Regal Suite</div>
+                      <div class="iu-cn-bit">{{$roomTypes->RT_NAME}}</div>
                       <div class="left">
                         <div class="ngi-ln">
                           2 Người lớn + 2 trẻ em dưới 14 tuổi
@@ -186,25 +186,9 @@
                       <div class="cn-h-regal-container">
                         <span class="cn-h-regal-container1">
                           <p class="cn-h-regal">
-                            Căn hộ Regal Suite rộng lớn có diện tích 164m² tại
-                            đây mang lại trải nghiệm hoàng gia đắm chìm trong sự
-                            xa hoa. Phòng khách thoải mái, ban công rộng lớn và
-                            phòng ngủ chính sang trọng với phòng lounge riêng tư
-                            tạo nên trải nghiệm hoàng gia đầy đủ cho bạn và gia
-                            đình. Được trang bị đẹp mắt với những màu sắc ấm áp
-                            của vùng Arab, mỗi Regal Suite có cửa chia phòng ngủ
-                            và phòng khách lớn, đảm bảo sự riêng tư tuyệt đối
-                            trong thời gian lưu trú của bạn. Hãy chiêm ngưỡng
-                            những bình minh tuyệt vời qua các tầng hải đăng tại
-                            Regal Suite với tầm nhìn ra đến bờ biển Dubai và
-                            Biển Ả Rập.
+                            {{$roomTypes->RtDes1}}
                           </p>
-                          <p class="cn-h-regal"></p>
-                          <p class="cn-h-regal">
-                            Phòng tắm ensuite sang trọng có sàn lát đá marble,
-                            bồn tắm hình dạng ôvan tự do và ghế sofa chaise, mời
-                            gọi bạn thư giãn và quên đi những lo âu hàng ngày.
-                          </p>
+
                         </span>
                       </div>
                     </div>
@@ -336,7 +320,7 @@
                       <div class="booking-box">
                         <div class="header1">
                           <div class="price">
-                            <div class="vn">9.000.000 VNĐ</div>
+                            <div class="vn">{{$roomTypes->RT_Cost}}</div>
                             <div class="div6">/</div>
                             <div class="m1">đêm</div>
                           </div>
@@ -345,11 +329,11 @@
                           <div class="row2">
                             <div class="attribute">
                               <div class="attribute1">CHECK-IN</div>
-                              <input class="value" type="date" />
+                              <input class="value" type="date" value="{{$BookingInfo['CheckinDate']}}"/>
                             </div>
                             <div class="attribute2">
                               <div class="attribute1">CHECKOUT</div>
-                              <input class="value" type="date" />
+                              <input class="value" type="date" value="{{$BookingInfo['CheckoutDate']}}"/>
                             </div>
                           </div>
                         </div>
@@ -360,8 +344,10 @@
                               alt=""
                               src="{{asset('img/Detail/icon31@2x.png')}}"
                             />
-
-                            <div class="text1">Đặt phòng</div>
+                            <form action="{{ route('booking.payment', ['id' => $roomTypes->id]) }}" method="POST">
+                                @csrf
+                            <div class="text1"><input class="text1" type="submit" style="color:black;" value="Đặt phòng"></div>
+                                </form>
                             <img
                               class="icon3"
                               alt=""
@@ -456,7 +442,7 @@
               class="inner"
               src="https://geckodigital.co/vt/Atlantis/?ss=0&startactions=lookat(7.15%2C36.61%2C120%2C0%2C0)%3B&fbclid=IwAR1AQZOPsiANVo66WI8mBwagrRuAZmFon5ir-ATKiIAVujLvu9UlOiMsd7c"
             >
-            </iframe>      
+            </iframe>
           </div>
           <div class="frame16">
             <div class="reviews">
@@ -466,7 +452,7 @@
 
                   <div class="div8">5.0</div>
                 </div>
-              </div>         
+              </div>
               <div class="comments">
                 <div class="row3">
                   <div class="airbnb-comment">
@@ -740,7 +726,7 @@
                     gian quy định sẽ không được hủy.
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -757,6 +743,6 @@
       }
       </script>
           <script src="script.js"></script>
-      
+
   </body>
 </html>

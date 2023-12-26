@@ -12,11 +12,35 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $roomTypes = RoomType::orderBy('G_ID', 'id')->get();
+        $roomTypes = RoomType::orderBy('id', 'desc')->get();
+        $BookingInfo = session('BookingData');
 
-        return view('Admin.RoomType.index')->with('roomTypes', $roomTypes);
+
+        return view('Booking.Booking', ['roomTypes' => $roomTypes, 'BookingInfo' => $BookingInfo]);
+    }
+    // public function indexDetail($id)
+    // {
+    //     $BookingInfo = session('BookingData');
+    //     $roomtype =  RoomType::where('id', $id)->first();
+    //     dd($roomtype);
+    //     return view('Booking.RoomDetail', ['roomTypes' => $roomtype, 'BookingInfo' => $BookingInfo]);
+    // }
+
+
+    public function RoomType($id){
+        $BookingInfo = session('BookingData');
+        $roomtype =  RoomType::where('id', $id)->first();
+
+        return view('Booking.RoomDetail',['roomTypes' => $roomtype, 'BookingInfo' => $BookingInfo]);
     }
 
+    
+    public function payMentInfo($id){
+        $BookingInfo = session('BookingData');
+        $roomtype =  RoomType::where('id', $id)->first();
+
+        return view('Payment.paymentB1',['roomTypes' => $roomtype, 'BookingInfo' => $BookingInfo]);
+    }
     /**
      * Show the form for creating a new resource.
      */

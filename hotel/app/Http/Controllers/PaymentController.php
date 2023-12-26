@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class PaymentController extends Controller
 {
     public function payment_method(Request $request){
+        // dd($request);
         $data = $request->all();
         session(['paymentInfo' => $data]);
         // $model = session('paymentInfo');
@@ -19,17 +20,17 @@ class PaymentController extends Controller
 
     public function MakePayment(){
         $paymentInfo = session('paymentInfo');
-        
-        $guestInfo['G_FirstName'] = $paymentInfo['G_Name'];
-        $guestInfo['G_Email'] =$paymentInfo['G_Email'];
+        // dd($paymentInfo);
+           $guestInfo['G_Email'] =$paymentInfo['G_Email'];
         $guestInfo['G_SDT'] = $paymentInfo['G_SDT'];
         $newGuest = Guest::create($guestInfo);
-        
+     $guestInfo['G_FirstName'] = $paymentInfo['G_Name'];
+
         $bookingInfo['B_CheckingDate'] = $paymentInfo['check_in_date'];
         $bookingInfo['B_CheckoutDate'] = $paymentInfo['check_out_date'];
         $bookingInfo['B_Cost'] = 2000000;
         $bookingInfo['G_ID'] = $newGuest['id'];
-        
+
         $newBooking = booking::create($bookingInfo);
 
         $payment['P_Status'] = "true";
@@ -49,7 +50,7 @@ class PaymentController extends Controller
     {
         $payments = Payment::orderBy('id', 'desc')->get();
         // dd($employee);
-        return view('Admin.Payment.index')->with('payments', $payments);    
+        return view('Admin.Payment.index')->with('payments', $payments);
     }
 
     /**
@@ -74,8 +75,8 @@ class PaymentController extends Controller
     public function show(int $id)
     {
         $payment = DB::table('payment')->where('id', $id)->first();
-        
-        return view('Admin.Payment.show')->with('payment', $payment);    
+
+        return view('Admin.Payment.show')->with('payment', $payment);
     }
 
     /**

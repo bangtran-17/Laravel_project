@@ -43,7 +43,7 @@
   <body>
     <div class="" style="width: 100%; padding: 0px 192px">
     <div class="landing-page" data-animate-on-scroll>
-      
+
 
       <button class="rectangle-parent">
         <div class="group-child"></div>
@@ -54,8 +54,8 @@
         <b class="ng-nhp" ><a href="/login" class="text-blue-500">Đăng nhập</a></b>
       </button>
       <div class="nav-bar-trch-parent">
-         
-        
+
+
         <div class="trang-ch-parent">
           <div class="trang-ch">TRANG CHỦ</div>
         </div>
@@ -65,8 +65,8 @@
           id="groupContainer"
         >
           <div class="trang-ch"> <a href="#v-khch-sn-group"> VỀ KHÁCH SẠN </a></div>
-          
-          
+
+
         </div>
         <div class="t-phng-parent">
           <div class="trang-ch"> <a href="#la-chn-ca-chng-ti-parent"> ĐẶT PHÒNG</a></div>
@@ -117,7 +117,7 @@
   <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
     <span class="carousel-control-next-icon"></span>
   </button>
-</div>  
+</div>
 
       <div class="ch-logo-vng-1-parent">
         <img class="ch-logo-vng-1" alt="" src="{{asset('img/public/ch-logo-vng-1@2x.png')}}" />
@@ -158,13 +158,16 @@
         <div class="rectangle-div"></div>
         <img class="group-icon" alt="" src="{{asset('img/public/group-12999.svg')}}" />
 
+        <form action="{{ route('dashboard.saveData') }}" method="POST">
+            @csrf
+            @method('POST')
         <button class="group-button">
           <div class="group-child1"></div>
           <div class="t-phng-group">
             <div class="t-phng1"><a href="/booking" style="color:black;">ĐẶT PHÒNG</a></div>
             <img
               class="appointment-icon"
-              alt=""
+              alt=""3
               src="{{asset('img/public/appointment@2x.png')}}"
             />
           </div>
@@ -174,20 +177,20 @@
 
           <div class="ngy-tr-phng-parent">
             <div class="ngy-tr-phng">Ngày trả phòng</div>
-            <input class="june" placeholder="22/07/2023" type="date" />
+            <input class="june" placeholder="22/07/2023" type="date" name="CheckoutDate"/>
           </div>
         </div>
         <div class="group-parent">
           <div class="s-lng-khch-parent">
             <div class="s-lng-khch">Số lượng khách</div>
-            <input class="june" placeholder="03" type="number" min="1" />
+            <input class="june" placeholder="03" type="number" min="1" name="number"/>
           </div>
           <img class="user-fill-icon" alt="" src="{{asset('img/public/user-fill.svg')}}" />
         </div>
         <div class="group-container">
           <div class="ngy-nhn-phng-parent">
             <div class="ngy-nhn-phng">Ngày nhận phòng</div>
-            <input class="june" placeholder="12/07/2023" type="date" />
+            <input class="june" placeholder="12/07/2023" type="date" name="CheckinDate"/>
           </div>
           <img
             class="export-fill-icon1"
@@ -195,6 +198,7 @@
             src="{{asset('img/public/export-fill1.svg')}}"
           />
         </div>
+        </form>
       </div>
       <div id="dch-v-ca-khch-sn-parent">
         <div class="dch-v-ca">DỊCH VỤ CỦA KHÁCH SẠN</div>
@@ -520,7 +524,7 @@
           }
         });
       }
-      
+
       var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
       var observer = new IntersectionObserver(
         (entries) => {
@@ -536,7 +540,7 @@
           threshold: 0.15,
         }
       );
-      
+
       for (let i = 0; i < scrollAnimElements.length; i++) {
         observer.observe(scrollAnimElements[i]);
       }

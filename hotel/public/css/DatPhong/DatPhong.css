@@ -288,6 +288,7 @@
 .tm-nhn-tuyt {
   position: relative;
   font-weight: 500;
+  margin-top:10px;
 }
 .eye-fill-parent,
 .frame-parent3,
@@ -356,7 +357,7 @@
   font-size: 22px;
   color: var(--slamon);
   text-align: right;
-  width: 262px;
+  width: 278px;
 }
 .ch-vi-parent,
 .frame-parent1 {
@@ -465,7 +466,7 @@
   position: relative;
   background-color: var(--color-white1);
   width: 100%;
-  height: 783px;
+  height: 100%;
   overflow: hidden;
   align-items: center;
   gap: 39px;
