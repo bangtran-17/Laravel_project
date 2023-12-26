@@ -6,6 +6,7 @@ use App\Models\booking;
 use App\Models\Guest;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -46,7 +47,9 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        $payments = Payment::orderBy('id', 'desc')->get();
+        // dd($employee);
+        return view('Admin.Payment.index')->with('payments', $payments);    
     }
 
     /**
@@ -68,9 +71,11 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
+    public function show(int $id)
     {
-        //
+        $payment = DB::table('payment')->where('id', $id)->first();
+        
+        return view('Admin.Payment.show')->with('payment', $payment);    
     }
 
     /**

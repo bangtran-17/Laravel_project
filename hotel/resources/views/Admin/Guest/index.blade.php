@@ -16,7 +16,7 @@
                                 <div class="css-1dbjc4n r-14lw9ot r-1l31rp8 r-kdyh1x r-rs99b7 r-1p0dtai r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-1wyyakw"
                                     style="transition-delay: 0ms; transition-duration: 200ms; transition-property: width, height, border-color, border-width, background-color; transition-timing-function: ease; will-change: width, height, border-color, border-width, background-color;">
                                 </div>
-                                <input type="text" id="myInput" placeholder="Tìm kiếm"
+                                <input type="text" id="searchInput" placeholder="Tìm kiếm"
                                     class="css-11aywtz r-13awgt0 r-t1w4ow r-ubezar r-135wba7 r-bcqeeo r-1ny4l3l r-10paoce r-13n6l4s"
                                     data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                             </div>
@@ -84,4 +84,19 @@
     </div>
 </div>
 <link rel="stylesheet" href="{{ asset('css/Admin/Employee/index.css') }}">
+
+<script>
+    $(document).ready(function() {
+        $("#searchInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                if ($(this).hasClass("header")) {
+                    // Bỏ qua việc ẩn/hiện header
+                    return true;
+                }
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
 @endsection

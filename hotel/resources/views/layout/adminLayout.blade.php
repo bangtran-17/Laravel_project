@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Quản Lý Nhân Viên</title>
 </head>
@@ -96,9 +97,9 @@
                                 <a href="{{ route('employees.index') }}" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                     id="tvat-myacc-promo-info">
-                                     {{-- style="background-color:rgba(1,148,243,1.00)" --}}
+                                     {{-- style="background-color:rgba(1,148,243,1.00)" filter:brightness(0) invert(1); --}}
                                         <div class="css-1dbjc4n r-18u37iz">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 448 512" style="filter:brightness(0) invert(1);margin-right:8px">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 448 512" style="margin-right:8px">
                                                 <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
                                             </svg>
                                             <div dir="auto" class="css-901oao r-1h9nbw7 r-t1w4ow r-ubezar r-majxgm r-135wba7 r-fdjqy7">QUẢN LÝ NHÂN VIÊN</div>
@@ -112,7 +113,7 @@
                         <div class="css-1dbjc4n r-bnwqim">
                             <div tabindex="0" class="css-1dbjc4n r-1loqt21 r-1otgn73 r-1i6wzkk r-lrvibr"
                                 style="-webkit-transition-duration:0s;transition-duration:0s">
-                                <a href="#" class="css-4rbku5">
+                                <a href="{{ route('payment.index') }}" class="css-4rbku5">
                                     <div class="css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep r-1guathk r-5njf8e"
                                         id="tvat-myacc-promo-info">
                                         <div class="css-1dbjc4n r-18u37iz">

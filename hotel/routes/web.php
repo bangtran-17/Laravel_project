@@ -53,6 +53,9 @@ Route::get('admin/department/create', function () {
 })->middleware(['auth','admin']);
 Route::resource('admin/departments', DepartmentController::class);
 
+// Admin Payment
+Route::resource('admin/payment', PaymentController::class);
+
 // Payment
 Route::get('/payment-info', function () {
     return view('Payment.paymentB1');

@@ -93,7 +93,7 @@
       var btnPrimary = document.getElementById("btnPrimary");
       if (btnPrimary) {
         btnPrimary.addEventListener("click", function (e) {
-          window.location.href = "./LandingPage.html";
+          window.location.href = "/";
         });
       }
       </script>

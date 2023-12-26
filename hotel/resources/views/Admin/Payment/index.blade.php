@@ -21,14 +21,6 @@
                                     data-testid="fullChangePassField" style="color: rgb(3, 18, 26);">
                             </div>
                         </div>
-                        <div class="css-1dbjc4n r-1awozwy r-18u37iz" data-testid="quick-links" style="padding-left: 30px;">
-                            <a href="{{ Url("/admin/employee/create") }}" class="css-4rbku5 r-1awozwy r-6koalj r-1q142lx r-88pszg">
-                                <button class="w-20">
-                                    <div dir="auto" class="css-901oao r-t1w4ow r-1b43r93 r-majxgm r-rjixqe r-fdjqy7"
-                                    style="color: rgb(3, 18, 26); margin-right: 4px; margin-left: 4px;">Thêm</div>
-                                </button>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -47,20 +39,20 @@
                             <div class="css-1dbjc4n r-obd0qt r-13awgt0 r-18u37iz r-tzz3ar">
                                 <table id="myTable">
                                     <tr class="header">
-                                        <th style="width:20%;">MÃ NHÂN VIÊN</th>
-                                        <th style="width:20%;">TÊN NHÂN VIÊN</th>
-                                        <th style="width:20%;">SĐT NHÂN VIÊN</th>
-                                        <th style="width:20%;">MÃ ĐẶT PHÒNG</th>
+                                        <th style="width:20%;">MÃ HÓA ĐƠN</th>
+                                        <th style="width:20%;">Mã ĐẶT PHÒNG</th>
+                                        <th style="width:20%;">THỜI GIAN</th>
+                                        <th style="width:20%;">TIỀN</th>
                                         <th style="width:20%;"></th>
                                     </tr>
-                                    @foreach ($employees as $employee)
+                                    @foreach ($payments as $payment)
                                     <tr>
-                                        <td>{{ $employee->E_ID }}</td>
-                                        <td>{{ $employee->E_FirstName }}</td>
-                                        <td>{{ $employee->E_ContactNumber }}</td>
-                                        <td>{{ $employee->E_Email }}</td>
+                                        <td>{{ $payment->id }}</td>
+                                        <td>{{ $payment->B_ID }}</td>
+                                        <td>{{ $payment->PaidDate }}</td>
+                                        <td>{{ $payment->P_Amount }}</td>
                                         <td>
-                                            <a href="{{ route('employees.show', ['employee'=>$employee->E_ID]) }}">
+                                            <a href="{{ route('payment.show', ['payment'=>$payment->id]) }}">
                                                 <button>Details</button>
                                             </a>
                                         </td>
@@ -99,4 +91,5 @@
         });
     });
 </script>
+
 @endsection

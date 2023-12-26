@@ -23,21 +23,30 @@ class EmployeesController extends Controller
 
     public function store(Request $request) {
         $request->E_DepartmentName;
-        
-        $data = $request->all();
+        if($request->E_DepartmentName != null){
+            $data = $request->all();
 
-        $DE_ID = DB::table('department')->where('DE_Name',$request->E_DepartmentName)->first();
-        // dd($DE_ID);
-        if($DE_ID != null){
-            $data['DE_ID'] = $DE_ID->id;
-        }else{
-            return redirect()->back()->withErrors(['message' => 'Không tìm thấy phòng ban với tên đã cho']);
+            $DE_ID = DB::table('department')->where('DE_Name',$request->E_DepartmentName)->first();
+            // dd($DE_ID);
+            if($DE_ID != null){
+                $data['DE_ID'] = $DE_ID->id;
+            }else{
+                return redirect()->back()->withErrors(['message' => 'Không tìm thấy phòng ban với tên đã cho']);
+            }
+
+            Employee::create($data);
+            return redirect('/admin/employees');
         }
+        else{
+            $data = $request->all();
+            Employee::create($data);
+            return redirect('/admin/employees');
+        }
+        
 
         // dd($data);
         
-        Employee::create($data);
-        return redirect('/admin/employees');
+        
     }
 
     public function edit($id){
@@ -49,24 +58,39 @@ class EmployeesController extends Controller
 
     public function update(Request $request, $id)
     {
-        $department = DB::table('department')->where('DE_Name',$request->E_DepartmentName)->first();
-        if($department != null){
-            $DE_ID = $department->id;
-        }else{
-            return redirect()->back()->withErrors(['message' => 'Không tìm thấy phòng ban với tên đã cho']);
+        if($request->E_E_DepartmentName != null){
+            $department = DB::table('department')->where('DE_Name',$request->E_DepartmentName)->first();
+            if($department != null){
+                $DE_ID = $department->id;
+            }else{
+                return redirect()->back()->withErrors(['message' => 'Không tìm thấy phòng ban với tên đã cho']);
+            }
+
+            $employee =  Employee::where('E_ID', $id)->update([
+                'E_FirstName' => $request->input('E_FirstName'),
+                'E_Email' => $request->input('E_Email'),
+                'E_ContactNumber' => $request->input('E_ContactNumber'),
+                'E_Designation' => $request->input('E_Designation'),
+                'E_JoinDate' => $request->input('E_JoinDate'),
+                'DE_ID' => $DE_ID
+            ]);
+            // dd($request);
+            return redirect('/admin/employees');
+        }
+        else
+        {
+            $employee =  Employee::where('E_ID', $id)->update([
+                'E_FirstName' => $request->input('E_FirstName'),
+                'E_Email' => $request->input('E_Email'),
+                'E_ContactNumber' => $request->input('E_ContactNumber'),
+                'E_Designation' => $request->input('E_Designation'),
+                'E_JoinDate' => $request->input('E_JoinDate'),
+                'DE_ID' => $request->input('E_E_DepartmentName')
+            ]);
+            // dd($request);
+            return redirect('/admin/employees');
         }
 
-        // return view('Guests.edit');
-        $employee =  Employee::where('E_ID', $id)->update([
-            'E_FirstName' => $request->input('E_FirstName'),
-            'E_Email' => $request->input('E_Email'),
-            'E_ContactNumber' => $request->input('E_ContactNumber'),
-            'E_Designation' => $request->input('E_Designation'),
-            'E_JoinDate' => $request->input('E_JoinDate'),
-            'DE_ID' => $DE_ID
-        ]);
-        // dd($request);
-        return redirect('/admin/employees');
     }
 
     public function show(int $id){

@@ -125,9 +125,6 @@
             </div>
             <div class="frame9">
               <div class="frame10">
-                <form action="/payment-method" method="POST">
-                    @csrf
-                    @method('POST')
                     <div class="frame11">
                         <div class="input2">
                           <div class="h">Tên</div>
@@ -174,28 +171,26 @@
                           />
                         </div>
                       </div>
-                      <div class="frame12">
-                        <div class="frame13">
-                          <button class="btn-secondary">
-                            <div class="bg"></div>
-                            <div class="cancel">Hủy</div>
-                          </button>
-                        </div>
-                        <div class="frame14">
-                          <button class="btn-secondary" id="btnPrimary" type="submit">
-                            <div class="bg1"></div>
-                            <div class="continue-to-book">Tiếp tục</div>
-                          </button>
-                        </div>
-                      </div>
-                </form>
               </div>
               <img class="frame-inner" alt="" src="{{asset('img/payment/vector-13@2x.png')}}" />
             </div>
           </div>
         </div>
       </div>
-
+      <div class="frame12">
+        <div class="frame13">
+          <button class="btn-secondary">
+            <div class="bg"></div>
+            <div class="cancel">Hủy</div>
+          </button>
+        </div>
+        <div class="frame14">
+          <button class="btn-secondary" id="btnPrimary" type="submit">
+            <div class="bg1"></div>
+            <div class="continue-to-book">Tiếp tục</div>
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
